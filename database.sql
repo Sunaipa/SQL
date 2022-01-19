@@ -106,4 +106,10 @@ CREATE TABLE IF NOT EXISTS reservation(
 );
 
 
+CREATE TABLE IF NOT EXISTS auteurs_temp(
+    id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL
+);
+
 SET foreign_key_checks = 1;

@@ -35,3 +35,19 @@ SELECT *, datediff( NOW(), DATE_ADD(date_emprunt, INTERVAL 15 DAY)) as retard
 FROM vue_emprunts as vem 
 WHERE NOW() >  DATE_ADD(date_emprunt, INTERVAL 15 DAY);
 
+
+
+SELECT  
+    COALESCE(ed.nom,'Total') as editeur,
+    COUNT(*) as nb 
+FROM editions as e
+JOIN editeurs as ed ON ed.id = e.id_editeur
+GROUP BY ed.nom WITH ROLLUP;
+
+
+SET @var:=1, @rang:=0;
+SELECT (@var := @var + 2=;
+
+SELECT *, (@rang:= @rang + 1) as rang FROM auteurs ORDER BY nom;
+
+

@@ -79,4 +79,17 @@ VALUES
 (2,3,'2007-01-10',NULL)
 ;
 
+INSERT INTO auteurs VALUES (SELECT nom, prenom FROM auteurs_temp); --faux
+
 SET FOREIGN_KEY_CHECKS = 1;
+
+LOAD LOCAL DATA INFILE
+'E:/Code/SQL/auteurs.csv'
+INTO TABLE auteurs_temp
+FIELDS
+    TERMINATED BY ';'
+    ENCLOSED BY '"'
+LINES
+    TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(nom, prenom);
